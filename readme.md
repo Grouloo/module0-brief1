@@ -5,7 +5,7 @@
 ### Lancer le serveur HTTP
 
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8
+uvicorn main:app --host 0.0.0.0 --port 80
 ```
 
 L'API sera ensuite disponible à l'adresse http://0.0.0.0/

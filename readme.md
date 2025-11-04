@@ -1,5 +1,15 @@
 # Interface d'analyse de sentiments
 
+## Installer le projet et ses dépendances
+
+```bash
+git clone https://github.com/Grouloo/module0-brief1.git
+
+pip install -r requirements.txt
+
+python -c "import nltk; nltk.download('vader_lexicon')"
+```
+
 ## Démarrer
 
 ### Lancer le serveur HTTP

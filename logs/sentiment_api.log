@@ -25,3 +25,8 @@
 2025-11-04 13:33:43.238 | INFO     | main:analyse_sentiment:36 - Résultats: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
 2025-11-04 13:33:47.299 | INFO     | main:analyse_sentiment:33 - Analyse du texte: I'm neither
 2025-11-04 13:33:47.306 | INFO     | main:analyse_sentiment:36 - Résultats: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-11-04 13:53:33.432 | DEBUG    | main:<module>:15 - L'API est en cours de démarrage...
+2025-11-04 13:53:38.043 | INFO     | main:analyse_sentiment:27 - Analyse du texte: I'm hap
+2025-11-04 13:53:38.043 | INFO     | main:analyse_sentiment:30 - Résultats: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-11-04 13:53:41.543 | INFO     | main:analyse_sentiment:27 - Analyse du texte: I'm happy
+2025-11-04 13:53:41.543 | INFO     | main:analyse_sentiment:30 - Résultats: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}

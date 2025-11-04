@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from nltk.sentiment import SentimentIntensityAnalyzer 
 from loguru import logger
 from sys import stderr
+from interpret_sentiment import interpret_sentiment
 
 sia = SentimentIntensityAnalyzer()
 app = FastAPI()
@@ -13,13 +14,6 @@ logger.add("logs/sentiment_api.log")
 
 logger.debug("L'API est en cours de démarrage...")
 
-def interpret_sentiment(compound: float):
-    if compound > 0.05:
-        return "Positif", "😊"
-    elif compound < -0.05:
-        return "Négatif", "😢"
-    else:
-        return "Neutre", "😐"
 
 @app.get("/")
 async def homepage():

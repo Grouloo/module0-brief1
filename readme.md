@@ -1,3 +1,5 @@
+# Interface d'analyse de sentiments
+
 ## Démarrer
 
 ### Lancer le serveur HTTP
@@ -17,6 +19,12 @@ streamlit run sentiment_streamlit.py
 Un nouvel onglet devrait s'ouvrir.
 
 Si ce n'est pas le cas, l'application devrait tout de même être accessible depuis l'adresse http://localhost:8501/
+
+### Lancer la suite de tests
+
+```bash
+pytest
+```
 
 ## Endpoints
 

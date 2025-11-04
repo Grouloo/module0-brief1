@@ -1,5 +1,7 @@
 # Interface d'analyse de sentiments
 
+Ce dépôt contient une API HTTP et son interface homme-machine permettant d'analyser le sentiment dominant d'un texte (positif, négatif ou neutre). Il est également muni de fichiers de logs et d'une suite de tests sommaire.
+
 ## Installer le projet et ses dépendances
 
 ```bash

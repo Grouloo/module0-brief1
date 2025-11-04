@@ -8,6 +8,16 @@ uvicorn main:app --host 0.0.0.0 --port 8
 
 L'API sera ensuite disponible à l'adresse http://0.0.0.0/
 
+### Lancer le frontend Streamlit
+
+```bash
+streamlit run sentiment_streamlit.py
+```
+
+Un nouvel onglet devrait s'ouvrir.
+
+Si ce n'est pas le cas, l'application devrait tout de même être accessible depuis l'adresse http://localhost:8501/
+
 ## Endpoints
 
 ### Analyser un texte

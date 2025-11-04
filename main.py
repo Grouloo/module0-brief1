@@ -17,9 +17,9 @@ def interpret_sentiment(compound: float):
     if compound > 0.05:
         return "Positif", "😊"
     elif compound < -0.05:
-        return "Negative", "😢"
+        return "Négatif", "😢"
     else:
-        return "Neutral", "😐"
+        return "Neutre", "😐"
 
 @app.get("/")
 async def homepage():

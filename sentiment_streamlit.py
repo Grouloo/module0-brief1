@@ -6,8 +6,6 @@ from sys import stderr
 logger.add(stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 logger.add("logs/sentiment_streamlit.log")
 
-logger.debug("L'application Streamlit est en cours de démarrage...")
-
 st.header("Analyse de sentiment")
 
 with st.form("my_form"):

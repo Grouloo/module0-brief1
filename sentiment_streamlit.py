@@ -27,7 +27,7 @@ with st.form("my_form"):
             st.write(f"Polarité négative : {sentiment['raw']['neg'] * 100} %")
             st.write(f"Polarité neutre : {sentiment['raw']['neu'] * 100} %")
             st.write(f"Polarité positive : {sentiment['raw']['pos'] * 100} %")
-            st.write(f"Score composé : {sentiment['raw']['compound'] * 100} %")
+            st.write(f"Score composé : {sentiment['raw']['compound']}")
         except requests.exceptions.RequestException as e: 
             st.error(f"Erreur de connexion à l'API : {e}")           
             logger.error(f"Erreur de connexion à l'API : {e}")

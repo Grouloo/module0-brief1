@@ -16,10 +16,24 @@ with st.form("my_form"):
     submitted = st.form_submit_button("Envoyer")
 
     if submitted:
-        response = requests.post("http://127.0.0.1:80/analyse_sentiment/", json={"text": text})
-        response.raise_for_status() 
-        sentiment = response.json()
+        logger.info(f"Texte à analyser: {text}")
+        try:
+            response = requests.post("http://127.0.0.1:80/analyse_sentiment/", json={"text": text})
+            response.raise_for_status() 
+            sentiment = response.json()
 
-        st.text(sentiment["raw"])
-        st.text(sentiment["interpretation"]["label"])
-        st.text(sentiment["interpretation"]["emoji"])
+            st.write(f"{sentiment['interpretation']['emoji']} {sentiment['interpretation']['label']}")
+            st.write("Résultats de l'analyse :")
+            st.write(f"Polarité négative : {sentiment['raw']['neg'] * 100} %")
+            st.write(f"Polarité neutre : {sentiment['raw']['neu'] * 100} %")
+            st.write(f"Polarité positive : {sentiment['raw']['pos'] * 100} %")
+            st.write(f"Score composé : {sentiment['raw']['compound'] * 100} %")
+        except requests.exceptions.RequestException as e: 
+            st.error(f"Erreur de connexion à l'API : {e}")           
+            logger.error(f"Erreur de connexion à l'API : {e}")
+        except requests.exceptions.HTTPError as e:
+            st.error(f"Erreur HTTP : {e}")
+            logger.error(f"Erreur HTTP : {e}")
+        except Exception as e:
+            st.error(f"Erreur lors de l'analyse: {e}")
+        

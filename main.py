@@ -30,18 +30,24 @@ class AnalyseSentimentInput(BaseModel):
 
 @app.post("/analyse_sentiment")
 async def analyse_sentiment(input: AnalyseSentimentInput):
-    result = sia.polarity_scores(input.text)
-    compound = result["compound"]
-    label, emoji = interpret_sentiment(compound)
-    return {
-        "raw": {
-            "neg": result["neg"],
-            "neu": result["neu"],
-            "pos": result["pos"],
-            "compound": compound
-        },
-        "interpretation": {
-            "label": label,
-            "emoji": emoji  
-        }  
-    }
+    logger.info(f"Analyse du texte: {input.text}")
+    try:
+        result = sia.polarity_scores(input.text)
+        logger.info(f"Résultats: {result}")
+        compound = result["compound"]
+        label, emoji = interpret_sentiment(compound)
+        return {
+            "raw": {
+                "neg": result["neg"],
+                "neu": result["neu"],
+                "pos": result["pos"],
+                "compound": compound
+            },
+            "interpretation": {
+                "label": label,
+                "emoji": emoji  
+            }  
+        }
+    except Exception as e:        
+        logger.error(f"Erreur lors de l'analyse: {e}")        
+        return {"error": str(e)}
